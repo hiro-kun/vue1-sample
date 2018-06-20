@@ -2,18 +2,12 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
-    <h1> {{msg}} </h1>
   </div>
 </template>
 
 <script>
 export default {
   name: 'App',
-  data() {
-    return {
-      msg: 'hello',
-    };
-  },
 };
 </script>
 
