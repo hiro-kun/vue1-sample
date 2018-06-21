@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import HelloWorld from '@/components/HelloWorld';
-import Sample from '@/components/Sample/Sample';
+import Sample from '@/components/User/User';
 
 Vue.use(Router);
 
@@ -13,8 +13,8 @@ export default new Router({
       component: HelloWorld,
     },
     {
-      path: '/sample',
-      name: 'Sample',
+      path: '/user/:id',
+      name: 'User',
       component: Sample,
     },
   ],
