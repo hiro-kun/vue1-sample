@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <Header/>
+    <SideBar/>
     <router-view/>
   </div>
 </template>
 
 <script>
 import Header from './components/global/Header';
+import SideBar from './components/global/SideBar';
 
 export default {
   name: 'App',
   components: {
     Header,
+    SideBar,
   },
 };
 </script>
