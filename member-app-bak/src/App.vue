@@ -1,15 +1,21 @@
 <template>
   <div id="app">
+    <Header/>
+    <SideBar/>
     <router-view/>
   </div>
 </template>
 
 <script>
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import Header from './components/global/Header';
+import SideBar from './components/global/SideBar';
 
 export default {
   name: 'App',
+  components: {
+    Header,
+    SideBar,
+  },
 };
 </script>
 

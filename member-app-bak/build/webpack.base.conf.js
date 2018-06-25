@@ -36,7 +36,6 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'va': 'vue2-admin-lte/src'
     }
   },
   module: {
