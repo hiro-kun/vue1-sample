@@ -39,27 +39,27 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       form: {
         email: 'test',
         name: 'test-name',
         food: null,
-        checked: []
+        checked: [],
       },
       foods: [
         { text: 'Select One', value: null },
-        'Carrots', 'Beans', 'Tomatoes', 'Corn'
+        'Carrots', 'Beans', 'Tomatoes', 'Corn',
       ],
-      show: true
-    }
+      show: true,
+    };
   },
   methods: {
-    onSubmit (evt) {
+    onSubmit(evt) {
       evt.preventDefault();
       alert(JSON.stringify(this.form));
     },
-    onReset (evt) {
+    onReset(evt) {
       evt.preventDefault();
       /* Reset our form values */
       this.form.email = '';
@@ -68,8 +68,8 @@ export default {
       this.form.checked = [];
       /* Trick to reset/clear native browser form validation state */
       this.show = false;
-      this.$nextTick(() => { this.show = true });
-    }
-  }
-}
+      this.$nextTick(() => { this.show = true; });
+    },
+  },
+};
 </script>

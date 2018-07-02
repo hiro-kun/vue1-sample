@@ -5,7 +5,7 @@ import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
-//import HelloWorld from '@/components/HelloWorld';
+// import HelloWorld from '@/components/HelloWorld';
 import User from '@/components/User/User';
 import Index from '@/components/Index/Index';
 
