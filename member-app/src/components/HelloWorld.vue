@@ -2,21 +2,6 @@
 <div>
 
 
-
-
-
-<h1>メンバー一覧</h1>
-
-  <b-table :fields="fields" :items="items">
-    <template slot="name" slot-scope="data">
-      <!-- <a :href="`${data.value.replace(/[^a-z]+/i,'-').toLowerCase()}`"> -->
-      <a :href="`${data.value}`">
-        {{data.value}}
-      </a>
-    </template>
-  </b-table>
-
-
 <h1>詳細/編集ページ ※編集ページはこれと同じようにする。更新ページは、更新ボタンを押したら更新されてalert表示される。</h1>
 <!-- https://bootstrap-vue.js.org/docs/components/form -->
 <b-form @submit="onSubmit" @reset="onReset" v-if="show">
@@ -62,15 +47,12 @@
   </div>
 
 
-
-
-
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       fields: [
         {
@@ -78,59 +60,51 @@ export default {
           // calling formatter 'fullName' in this app
           key: 'name',
           label: 'Full Name',
-          //formatter: 'fullName'
-          formatter: (value) => { return value.first }
+          // formatter: 'fullName'
+          formatter: value => value.first,
         },
         // A regular column
         'age',
         {
           // A regular column with custom formatter
           key: 'sex',
-          formatter: (value) => { return value.charAt(0).toUpperCase() }
+          formatter: value => value.charAt(0).toUpperCase(),
         },
         {
           // A virtual column with custom formatter
           key: 'birthYear',
           label: 'Calculated Birth Year',
-          formatter: (value, key, item) => {
-            return (new Date()).getFullYear() - item.age
-          }
-        }
+          formatter: (value, key, item) => (new Date()).getFullYear() - item.age,
+        },
       ],
       form: {
         email: '',
         name: '',
         food: null,
-        checked: []
+        checked: [],
       },
       foods: [
         { text: 'Select One', value: null },
-          'Carrots', 'Beans', 'Tomatoes', 'Corn'
+        'Carrots', 'Beans', 'Tomatoes', 'Corn',
       ],
       show: true,
-      items: [
-        { name: { first: 'John', last: 'Doe' }, sex: 'Male', age: 42 },
-        { name: { first: 'Jane', last: 'Doe' }, sex: 'Female', age: 36 },
-        { name: { first: 'Rubin', last: 'Kincade' }, sex: 'male', age: 73 },
-        { name: { first: 'Shirley', last: 'Partridge' }, sex: 'female', age: 62 }
-      ],
       items_second: [
         { 名前: true, 年齢: 40, 性別: 'Dickerson', ステータス: 'Macdonald' },
         { 名前: false, 年齢: 21, 性別: 'Larsen', ステータス: 'Shaw' },
         { 名前: false, 年齢: 89, 性別: 'Geneva', ステータス: 'Wilson' },
-        { 名前: true, 年齢: 38, 性別: 'Jami', ステータス: 'Carney' }
-      ]
-    }
+        { 名前: true, 年齢: 38, 性別: 'Jami', ステータス: 'Carney' },
+      ],
+    };
   },
   methods: {
-    fullName (value) {
-      return `${value.first} ${value.last}`
+    fullName(value) {
+      return `${value.first} ${value.last}`;
     },
-    onSubmit (evt) {
+    onSubmit(evt) {
       evt.preventDefault();
       alert(JSON.stringify(this.form));
     },
-    onReset (evt) {
+    onReset(evt) {
       evt.preventDefault();
       /* Reset our form values */
       this.form.email = '';
@@ -139,10 +113,10 @@ export default {
       this.form.checked = [];
       /* Trick to reset/clear native browser form validation state */
       this.show = false;
-      this.$nextTick(() => { this.show = true });
-    }
-  }
-}
+      this.$nextTick(() => { this.show = true; });
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

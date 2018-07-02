@@ -42,11 +42,6 @@
 </b-navbar>
 
 
-
-
-
-
-
 <h1>メンバー一覧</h1>
 
   <b-table :fields="fields" :items="items">
@@ -57,23 +52,6 @@
       </a>
     </template>
   </b-table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <h1>詳細/編集ページ ※編集ページはこれと同じようにする。更新ページは、更新ボタンを押したら更新されてalert表示される。</h1>
@@ -119,9 +97,6 @@
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
   </div>
-
-
-
 
 
   </div>
