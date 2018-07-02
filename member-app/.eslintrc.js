@@ -30,6 +30,7 @@ module.exports = {
       js: 'never',
       vue: 'never'
     }],
+    'vue/no-parsing-error': [2, { 'x-invalid-end-tag': false }],
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
     'no-param-reassign': ['error', {
@@ -40,6 +41,7 @@ module.exports = {
         'e' // for e.returnvalue
       ]
     }],
+    'no-alert': 0,
     // allow optionalDependencies
     'import/no-extraneous-dependencies': ['error', {
       optionalDependencies: ['test/unit/index.js']
