@@ -3,9 +3,9 @@
   <h1>メンバー一覧</h1>
 
   <b-table :fields="fields" :items="items">
-    <template slot="name" slot-scope="data">
+    <template slot="user_id" slot-scope="data">
       <!-- <a :href="`${data.value.replace(/[^a-z]+/i,'-').toLowerCase()}`"> -->
-      <a :href="`${data.value}`">
+      <a :href="`/#/user/${data.value}`">
         {{data.value}}
       </a>
     </template>
@@ -18,6 +18,13 @@ export default {
   data() {
     return {
       fields: [
+        {
+          // A column that needs custom formatting,
+          // calling formatter 'fullName' in this app
+          key: 'user_id',
+          label: 'User Id',
+          formatter: value => value,
+        },
         {
           // A column that needs custom formatting,
           // calling formatter 'fullName' in this app
@@ -41,10 +48,11 @@ export default {
         },
       ],
       items: [
-        { name: { first: 'John', last: 'Doe' }, sex: 'Male', age: 42 },
-        { name: { first: 'Jane', last: 'Doe' }, sex: 'Female', age: 36 },
-        { name: { first: 'Rubin', last: 'Kincade' }, sex: 'male', age: 73 },
-        { name: { first: 'Shirley', last: 'Partridge' }, sex: 'female', age: 62 },
+        { user_id: 1, name: { first: 'John', last: 'Doe' }, sex: 'Male', age: 42 },
+        { user_id: 2, name: { first: 'John', last: 'Doe' }, sex: 'Male', age: 42 },
+        { user_id: 3, name: { first: 'Jane', last: 'Doe' }, sex: 'Female', age: 36 },
+        { user_id: 4, name: { first: 'Rubin', last: 'Kincade' }, sex: 'male', age: 73 },
+        { user_id: 5, name: { first: 'Shirley', last: 'Partridge' }, sex: 'female', age: 62 },
       ],
       methods: {
         fullName(value) {
