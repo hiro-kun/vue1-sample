@@ -1,15 +1,17 @@
 <template>
   <div>
-  <h1>メンバー一覧</h1>
 
-  <b-table :fields="fields" :items="items">
-    <template slot="user_id" slot-scope="data">
-      <!-- <a :href="`${data.value.replace(/[^a-z]+/i,'-').toLowerCase()}`"> -->
-      <a :href="`/#/user/${data.value}`">
-        {{data.value}}
-      </a>
-    </template>
-  </b-table>
+
+    <h1>メンバー一覧</h1>
+
+    <b-table :fields="fields" :items="items">
+      <template slot="user_id" slot-scope="data">
+        <!-- <a :href="`${data.value.replace(/[^a-z]+/i,'-').toLowerCase()}`"> -->
+        <a :href="`/#/user/${data.value}`">
+          {{data.value}}
+        </a>
+      </template>
+    </b-table>
   </div>
 </template>
 
