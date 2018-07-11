@@ -8,6 +8,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 // import HelloWorld from '@/components/HelloWorld';
 import User from '@/components/User/User';
 import Index from '@/components/Index/Index';
+import Sample from '@/components/Sample/Sample';
 
 Vue.use(Router);
 Vue.use(BootstrapVue);
@@ -30,6 +31,11 @@ export default new Router({
       path: '/user/:id',
       name: 'User',
       component: User,
+    },
+    {
+      path: '/sample/',
+      name: 'Sample',
+      component: Sample,
     },
   ],
 });
