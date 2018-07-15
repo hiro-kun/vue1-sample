@@ -1,17 +1,25 @@
 <template>
   <div>
     <button @click="sample">API Kick</button>
+
+    <h1>{{msg}}</h1>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+// import store from '.vuex/store.js'
 
 export default {
   data: function () {
     return {
       root: 'test-hot',
     }
+  },
+  computed: {
+    msg() {
+      return this.$store.state.msg;
+    },
   },
   methods: {
     sample() {
