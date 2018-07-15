@@ -7,14 +7,13 @@
 </template>
 
 <script>
-import axios from 'axios'
-// import store from '.vuex/store.js'
+import axios from 'axios';
 
 export default {
-  data: function () {
+  data() {
     return {
-      root: 'test-hot',
-    }
+      foo: 'bar',
+    };
   },
   computed: {
     msg() {
@@ -23,19 +22,13 @@ export default {
   },
   methods: {
     sample() {
-      console.log('sample');
-
-      //axios.get('http://uedayou.net/loa/%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E6%B0%B8%E7%94%B0%E7%94%BA%E4%B8%80%E4%B8%81%E7%9B%AE7.json')
-      //axios.get('http://127.0.0.1/test.php')
       axios.get('http://192.168.33.88/test.php')
-        .then(function (response) {
+        .then((response) => {
           console.log(response.data);
         })
-        .catch(function (error) {
+        .catch((error) => {
           console.log(error);
         });
- 
-
     },
   },
 };
